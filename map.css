@@ -1,0 +1,87 @@
+html, body {
+    margin: 0;
+    padding: 5;
+    height: 100%;
+    width: 100%;
+    display: flex;
+    justify-content: center; /* Center horizontally */
+    align-items: center;     /* Center vertically */
+  }
+     
+  #map {
+    width: 100%;    /* Adjust width to your desired size */
+    height: 100%;   /* Adjust height to your desired size */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Optional: subtle shadow for effect */
+    border-radius: 8px; /* Optional: rounded corners */
+  }
+
+  #map svg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none; /* Prevents blocking map interactions */
+    z-index: 1; /* Ensures it appears on top of the map */
+}
+
+circle {
+    pointer-events: auto; /* Allow hover interactions for tooltips */
+}
+
+/* Style the header to align elements properly */
+header {
+    display: flex;
+    gap: 1em;
+    align-items: baseline;
+    padding: 10px;
+}
+
+/* Push the label to the right */
+label {
+    margin-left: auto;
+}
+
+/* Ensure the time and 'any time' text are properly displayed */
+time, em {
+    display: block;
+}
+
+/* Style 'any time' to look different */
+em {
+    color: gray;
+    font-style: italic;
+}
+
+.legend {
+    position: absolute;
+    bottom: 20px;
+    right: 20px;
+    background: white;
+    padding: 10px;
+    border-radius: 5px;
+    box-shadow: 0 0 5px rgba(0,0,0,0.3);
+    font-size: 14px;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+  }
+  
+  .legend div {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  
+  .legend div::before {
+    content: "";
+    width: 20px;
+    height: 20px;
+    display: block;
+    border-radius: 50%;
+  }
+  
+  .legend .departures::before { background-color: steelblue; }
+  .legend .balanced::before { background-color: gray; }
+  .legend .arrivals::before { background-color: darkorange; }
+  

@@ -4,8 +4,44 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Bike Watching</title>
+
+    <!-- Load D3.js from CDN -->
+    <script src="https://d3js.org/d3.v7.min.js"></script>
+
+    <!-- Load CSS Files -->
+    <link rel="stylesheet" href="global.css">
+    <link rel="stylesheet" href="map.css">
+    <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+
+    <!-- Load Mapbox GL JS CSS (Before JS) -->
+    <link href="https://api.mapbox.com/mapbox-gl-js/v2.15.0/mapbox-gl.css" rel="stylesheet" />
+
+    <!-- Load Mapbox GL JS JavaScript -->
+    <script src="https://api.mapbox.com/mapbox-gl-js/v2.15.0/mapbox-gl.js"></script>
 </head>
 <body>
     <h1>🚴🏼‍♀️ Bike Watching</h1>
+    <label>
+        Filter by time: 
+        <input type="range" id="time-slider" min="-1" max="1440" value="-1">
+        <time id="selected-time"></time>
+        <em id="any-time">(any time)</em>
+    </label>
+
+    <!-- Map Container -->
+    <div id="map">
+        <svg></svg>
+    </div>
+
+    <!-- Load Custom Map Script -->
+    <script src="map.js"></script>
+
+    <div class="legend">
+        <div class="departures">More Departures</div>
+        <div class="balanced">Balanced</div>
+        <div class="arrivals">More Arrivals</div>
+      </div>
+      
+      
 </body>
 </html>
